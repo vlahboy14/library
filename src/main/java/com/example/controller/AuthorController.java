@@ -28,15 +28,13 @@ public class AuthorController {
     }
 
     @GetMapping("/author-create")
-    public String createUserForm(Author user){
+    public String createAuthorForm(Author author){
         return "author-create";
     }
 
     @PostMapping("/author-create")
-    public String createUser(Author user){
-        authorService.saveAuthor(user);
+    public String createAuthor(Author author){
+        authorService.saveAuthor(author);
         return "redirect:/authors";
     }
-
-
 }
