@@ -15,6 +15,8 @@
                 <th>Id</th>
                 <th>First name</th>
                 <th>Last name</th>
+<!--                <th>Birth date</th>-->
+                <th>Country</th>
             </tr>
             </thead>
             <tbody>
@@ -22,6 +24,8 @@
                 <td th:text="${author.id}"></td>
                 <td th:text="${author.firstName}"></td>
                 <td th:text="${author.lastName}"></td>
+<!--                <td th:text="${author.birthDate}"></td>-->
+                <td th:text="${author.country}"></td>
                 <td><a th:href="@{author-update/{id}(id=${author.id})}">Edit</a></td>
                 <td><a th:href="@{author-delete/{id}(id=${author.id})}">Delete</a></td>
             </tr>

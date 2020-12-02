@@ -19,11 +19,15 @@ public class Author {
     @Column(name = "last_name")
     private String lastName;
 
+    @Column(name = "country")
+    private String country;
+
     public Author() {
     }
 
-    public Author(String firstName, String lastName) {
+    public Author(String firstName, String lastName, String country) {
         this.firstName = firstName;
         this.lastName = lastName;
+        this.country = country;
     }
 }

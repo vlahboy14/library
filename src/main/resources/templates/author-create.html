@@ -1,16 +1,29 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
     <meta charset="UTF-8">
     <title>Create author</title>
 </head>
 <body>
-<form action="#" th:action="@{/author-create}" th:object="${author}" method="post">
-    <label for="firstName">First name</label>
-    <input type="text" th:field="*{firstName}" id="firstName" placeholder="First Name">
-    <label for="lastName">Last name</label>
-    <input type="text" th:field="*{lastName}" id="lastName" placeholder="Last Name">
-    <input type="submit" value="Create Author">
-</form>
+<div class="container">
+    <form action="#" th:action="@{/author-create}" th:object="${author}" method="post">
+        <label for="firstName">First name</label>
+        <input type="text" th:field="*{firstName}" id="firstName" placeholder="First Name">
+        <br>
+        <label for="lastName">Last name</label>
+        <input type="text" th:field="*{lastName}" id="lastName" placeholder="Last Name">
+<!--        <br>-->
+<!--        <label for="lastName">Birth date</label>-->
+<!--        <input type="text" th:field="*{birthDate}" id="birthDate" placeholder="Birth Date">-->
+        <br>
+        <label for="lastName">Country</label>
+        <input type="text" th:field="*{country}" id="country" placeholder="Country">
+        <br>
+        <input type="submit" value="Create Author">
+    </form>
+</div>
 </body>
 </html>
