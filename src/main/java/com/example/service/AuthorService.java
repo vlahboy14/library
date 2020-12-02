@@ -29,7 +29,7 @@ public class AuthorService {
         return mainRepos.save(author);
     }
 
-    public void saveAuthor(Integer id) {
+    public void deleteAuthorById(Integer id) {
         mainRepos.deleteById(id);
     }
 }

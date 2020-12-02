@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import java.util.List;
@@ -20,11 +21,11 @@ public class AuthorController {
         this.authorService = authorService;
     }
 
-    @GetMapping("/authors")
+    @GetMapping("/author")
     public String getAuthors(Model model) {
-        List<Author> authors = authorService.findAll();
-        model.addAttribute("authors", authors);
-        return "authors-list";
+        List<Author> author = authorService.findAll();
+        model.addAttribute("author", author);
+        return "author-list";
     }
 
     @GetMapping("/author-create")
@@ -33,8 +34,14 @@ public class AuthorController {
     }
 
     @PostMapping("/author-create")
-    public String createAuthor(Author author){
+    public String createAuthor(Author author) {
         authorService.saveAuthor(author);
-        return "redirect:/authors";
+        return "redirect:/author";
+    }
+
+    @GetMapping("/author-delete/{id}")
+    public String deleteAuthor(@PathVariable("id") Integer id) {
+        authorService.deleteAuthorById(id);
+        return "redirect:/author";
     }
 }
