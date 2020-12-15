@@ -1,7 +1,7 @@
 package com.example.service;
 
 import com.example.model.Author;
-import com.example.repository.MainRepos;
+import com.example.repository.AuthorRepos;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -10,26 +10,26 @@ import java.util.List;
 @Service
 public class AuthorService {
 
-    private final MainRepos mainRepos;
+    private final AuthorRepos authorRepos;
 
     @Autowired
-    public AuthorService(MainRepos mainRepos) {
-        this.mainRepos = mainRepos;
+    public AuthorService(AuthorRepos authorRepos) {
+        this.authorRepos = authorRepos;
     }
 
     public Author findById(Integer id) {
-        return mainRepos.getOne(id);
+        return authorRepos.getOne(id);
     }
 
     public List<Author> findAll() {
-        return mainRepos.findAll();
+        return authorRepos.findAll();
     }
 
     public Author saveAuthor(Author author) {
-        return mainRepos.save(author);
+        return authorRepos.save(author);
     }
 
     public void deleteAuthorById(Integer id) {
-        mainRepos.deleteById(id);
+        authorRepos.deleteById(id);
     }
 }

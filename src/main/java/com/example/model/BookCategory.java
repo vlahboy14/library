@@ -13,13 +13,13 @@ public class BookCategory {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @Column(name = "category")
-    private String category;
+    @Column(name = "book_category")
+    private String bookCategory;
 
     public BookCategory() {
     }
 
-    public BookCategory(String category) {
-        this.category = category;
+    public BookCategory(String bookCategory) {
+        this.bookCategory = bookCategory;
     }
 }

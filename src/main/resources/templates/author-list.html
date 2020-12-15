@@ -9,30 +9,33 @@
     <h2 th:case="null">No author found!</h2>
     <div th:case="*">
         <h2>Author</h2>
-        <table>
-            <thead>
-            <tr>
-                <th>Id</th>
-                <th>First name</th>
-                <th>Last name</th>
-<!--                <th>Birth date</th>-->
-                <th>Country</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr th:each="author : ${author}">
-                <td th:text="${author.id}"></td>
-                <td th:text="${author.firstName}"></td>
-                <td th:text="${author.lastName}"></td>
-<!--                <td th:text="${author.birthDate}"></td>-->
-                <td th:text="${author.country}"></td>
-                <td><a th:href="@{author-update/{id}(id=${author.id})}">Edit</a></td>
-                <td><a th:href="@{author-delete/{id}(id=${author.id})}">Delete</a></td>
-            </tr>
-            </tbody>
-        </table>
+        <div class="container">
+            <table>
+                <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>First name</th>
+                    <th>Last name</th>
+                    <!--                <th>Birth date</th>-->
+                    <th>Country</th>
+                </tr>
+                </thead>
+
+                <tbody>
+                <tr th:each="author : ${author}">
+                    <td th:text="${author.id}"></td>
+                    <td th:text="${author.firstName}"></td>
+                    <td th:text="${author.lastName}"></td>
+                    <!--                <td th:text="${author.birthDate}"></td>-->
+                    <td th:text="${author.country}"></td>
+                    <td><a th:href="@{author-delete/{id}(id=${author.id})}">Delete</a></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
     </div>
     <p><a href="/author-create">Create author</a></p>
+    <p><a href="/">Back to home</a></p>
 </div>
 </body>
 </html>

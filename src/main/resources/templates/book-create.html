@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <meta charset="UTF-8">
+    <title>Create Book</title>
+</head>
+<body>
+<div class="container">
+    <form action="#" th:action="@{/book-create}" th:object="${book}" method="post">
+        <label for="name">Name</label>
+        <input type="text" th:field="*{name}" id="name" placeholder="Name">
+        <br>
+        <label for="author">Author</label>
+        <input type="text" th:field="*{author}" id="author" placeholder="Author">
+        <br>
+        <label for="category">Category</label>
+        <input type="text" th:field="*{category}" id="category" placeholder="Category">
+        <br>
+        <label for="description">Description</label>
+        <input type="text" th:field="*{description}" id="description" placeholder="Description">
+        <br>
+        <label for="timestamp">Timestamp</label>
+        <input type="text" th:field="*{timestamp}" id="timestamp" placeholder="Timestamp">
+        <br>
+        <input type="submit" value="Create Book">
+    </form>
+    <br>
+    <p><a href="/book">Back to Book list</a></p>
+    <p><a href="/">Back to home</a></p>
+</div>
+</body>
+</html>
